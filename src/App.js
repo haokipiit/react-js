@@ -13,6 +13,7 @@ function App() {
       {/* Reusing components */}
       <ExpenseItem />
       <ExpenseItem />
+      {/* Even though we use the same component here thrice, the state changes are managed independently by react. So changing the state for one component doesn't affect the states for other components - This is called per component instance basis */}
     </div>
   );
 }
