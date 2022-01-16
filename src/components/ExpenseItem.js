@@ -1,33 +1,16 @@
-import React from "react";
-import Expenses from "./Expenses";
+import "./ExpenseItem.css";
 
-function ExpenseItem() {
-  // this is a component
-
-  const expenses = [
-    {
-      name: "Julie",
-      age: 12,
-    },
-    {
-      name: "John",
-      age: 23,
-    },
-    {
-      name: "Matthew",
-      age: 13,
-    },
-  ];
-
+function ExpenseItem(props) {
   return (
-    <div>
-      <Expenses name={expenses[0].name} age={expenses[0].age} />
-      <Expenses name={expenses[1].name} age={expenses[1].age} />
-      <Expenses name={expenses[2].name} age={expenses[2].age} />
+    <div className="expense-item">
+      <div>{props.date.toISOString()}</div>
+      <div className="expense-item__description">
+        <h2>{props.title}</h2>
+        {/* A javascript can be added inside here using the curly brace */}
+        <div className="expense-item__price">$ {props.amount}</div>
+      </div>
     </div>
   );
 }
 
 export default ExpenseItem;
-// We have to export the ExpenseItem component so that we can use it in the App.js component
-// Components in react are connected by this way - export and import.
