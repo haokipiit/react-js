@@ -1,5 +1,6 @@
-How functions are executed in react
+>How functions are executed in react
 
+...
 function Expenses(props) {
   return (
     <Card className="expenses">
@@ -11,20 +12,22 @@ function Expenses(props) {
     </Card>
   );
 }
+...
 
 the function Expenses of course returns something (JSX) in react;
 here,
+...
 <ExpenseItem
   title={props.items[0].title}
   amount={props.items[0].amount}
   date={props.items[0].date}
 />
-
+...
 this <ExpenseItem/> is just like a function call / it act as a function call
 So from here, the component ExpenseItem will be executed/call
 And react runs everything only once at the start. This is how react displays things on the screen.
 
-STATE :
+>STATE :
 
 If we want to change anything after react has once runs everything, react has something called state that allows us to make changes in the program afterwards.
 
@@ -43,7 +46,7 @@ After calling the setTitle to change the current state value, react once again e
 The calling of setTitle() doesn't directly changes the state, instead it schedule the changes.
 
 > Per component basis
-
+...
 <ExpenseItem
   title={props.items[0].title}
   amount={props.items[0].amount}
@@ -59,6 +62,6 @@ The calling of setTitle() doesn't directly changes the state, instead it schedul
   amount={props.items[2].amount}
   date={props.items[2].date}
 />
-
+...
 If you change the state of (say) the first component, it doesn't affect the other two components. React independently manages the three components, even though they are same compononent re-use again and again. This is called per-component basis.
 
